@@ -17,11 +17,11 @@
     "jsx": "react-jsx",
     "baseUrl": "./",
     "paths": {
-      // "@src/*": ["src/*"],
-      "@app/*": ["src/app/*"],
-      "@features/*": ["src/features/*"],
-      "@routes/*": ["src/routes/*"],
-      "@type/*": ["src/types/*"]
+      "@/*": ["src/*"],
+      // "@app/*": ["src/app/*"],
+      // "@features/*": ["src/features/*"],
+      // "@routes/*": ["src/routes/*"],
+      // "@type/*": ["src/types/*"]
     }
   },
   "include": ["src"],
