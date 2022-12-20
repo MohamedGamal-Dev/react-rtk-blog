@@ -1,6 +1,6 @@
 import { createSlice } from '@reduxjs/toolkit';
-import { fetchPosts } from '@features/posts';
-import { PostsState} from '@type/posts';
+import { fetchPosts } from '@/features/posts';
+import { PostsState} from '@/types/posts';
 
 const initialState: PostsState = { data: [], isLoading: false, error: null };
 

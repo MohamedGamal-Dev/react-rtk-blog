@@ -1,11 +1,20 @@
-import React from 'react';
+import { useEffect } from 'react';
+
+import { useDispatch } from '@/features/utils/use-typed-rtk-store';
+import { fetchPosts } from '@/features/posts';
+
+import PostsList from '@/features/posts/posts-list.component';
 
 const App = () => {
+  const dispatch = useDispatch();
+  useEffect(() => {
+    dispatch(fetchPosts);
+  }, []);
+
   return (
-    <h1 className="text-3xl font-bold underline">
-      Hello world!
-    </h1>
-  )
+    //
+    <PostsList />
+  );
 };
 
 export default App;
