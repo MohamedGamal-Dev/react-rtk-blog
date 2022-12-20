@@ -8,10 +8,14 @@ export default defineConfig({
   // MANUAL ABSOLUTE PATH SUPPORT
   // Use if there's an issue with [vite-tsconfig-paths] plugin
   // ----------------------------------------------------------
-  // resolve: {
-  //   alias: [
-  //     { find: '@/*', replacement: 'src/*' },
-  //   ],
-  // },
-  plugins: [tsconfigPaths(), react()],
+  resolve: {
+    alias: [
+      // { find: '@/*', replacement: '/src/*' },
+      { find: '@utils/*', replacement: 'src/features/utils/*' },
+    ],
+  },
+  plugins: [
+    tsconfigPaths(),
+    react(),
+  ],
 });

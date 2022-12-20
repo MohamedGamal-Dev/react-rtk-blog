@@ -2,7 +2,7 @@ import React, { Fragment } from 'react';
 
 import { useSelector } from '@utils/use-typed-rtk-store';
 import { PostType } from '@/types/posts';
-import PostItem from './post-item.component';
+import { PostItem } from '@/features/posts';
 
 const PostsList: React.FunctionComponent = () => {
   const { data, isLoading, error } = useSelector((state) => {
