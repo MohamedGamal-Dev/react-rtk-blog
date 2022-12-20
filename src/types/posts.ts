@@ -11,4 +11,7 @@ export interface PostType {
   body: string;
 }
 
-
+export interface PostProps {
+  post: PostType;
+  children?: React.ReactNode;
+}
