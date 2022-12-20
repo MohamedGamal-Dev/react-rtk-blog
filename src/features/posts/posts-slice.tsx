@@ -1,7 +1,8 @@
 import { createSlice } from '@reduxjs/toolkit';
 import { fetchPosts } from '@features/posts';
+import { PostsState} from '@type/posts';
 
-const initialState = { data: [], isLoading: false, error: null };
+const initialState: PostsState = { data: [], isLoading: false, error: null };
 
 const postsSlice = createSlice({
   name: 'posts',
@@ -18,8 +19,7 @@ const postsSlice = createSlice({
     builder.addCase(fetchPosts.rejected, (state, action) => {
       state.isLoading = false;
       state.data = [];
-      state.error = action.error.message;
-      // FIX: TS SetUP NEEDED
+      state.error = action.error;
     });
   },
 });
