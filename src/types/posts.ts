@@ -1,7 +1,7 @@
 export interface PostsState {
   data: PostType[];
   isLoading: boolean;
-  error: null | {};
+  error: null | string;
 }
 
 export interface PostType {

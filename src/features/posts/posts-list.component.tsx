@@ -13,7 +13,7 @@ const PostsList: React.FunctionComponent = () => {
   return (
     <div>
       {isLoading && <h1>Loading...</h1>}
-      {error && <p>Error...</p>}
+      {error && <p>{error}</p>}
       {renderList()}
     </div>
   );
