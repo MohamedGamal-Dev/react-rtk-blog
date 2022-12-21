@@ -15,3 +15,9 @@ export interface PostProps {
   post: PostType;
   children?: React.ReactNode;
 }
+
+export interface PostPrepare {
+  userId: string;
+  title: string;
+  body: string;
+}
