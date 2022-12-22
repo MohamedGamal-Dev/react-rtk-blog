@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 
-import { useDispatch, useSelector } from '@utils/use-typed-rtk-store';
+import { useDispatch, useSelector } from '@/app/use-typed-rtk-store';
 import { addPost } from '@/features/posts';
 
 const PostAdd: React.FunctionComponent = () => {

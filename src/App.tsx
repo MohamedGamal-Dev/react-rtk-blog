@@ -1,10 +1,10 @@
 import { useEffect } from 'react';
 import { Route, Routes } from 'react-router-dom';
 
-import { useDispatch } from '@utils/use-typed-rtk-store';
+import { useDispatch } from '@/app/use-typed-rtk-store';
 import { PostsList, PostAdd, fetchPosts } from '@/features/posts';
 import { fetchUsers } from '@/features/users';
-import { HOME_PAGE, POST } from './routes';
+import { HOME_PAGE, POST } from '@/routes';
 
 const App = () => {
   const dispatch = useDispatch();

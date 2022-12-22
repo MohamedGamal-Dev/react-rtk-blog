@@ -1,6 +1,6 @@
 import React, { Fragment } from 'react';
 
-import { useSelector } from '@utils/use-typed-rtk-store';
+import { useSelector } from '@/app/use-typed-rtk-store';
 import { PostType } from '@/types/posts';
 import { PostItem } from '@/features/posts';
 
