@@ -1,2 +1,2 @@
-export * from './fetchPosts';
-export * from './addPost';
+export * from './fetch-posts';
+export * from './add-post';
