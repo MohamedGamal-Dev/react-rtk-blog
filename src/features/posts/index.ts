@@ -1,7 +1,8 @@
 export * from './api';
 export * from './posts-slice';
 
-import PostItem from './post-item.component';
 import PostsList from './posts-list.component';
+import PostItem from './post-item.component';
+import PostAdd from './post-add.component';
 
-export { PostsList, PostItem };
+export { PostsList, PostItem, PostAdd };

@@ -14,8 +14,5 @@ export default defineConfig({
       { find: '@utils/*', replacement: 'src/features/utils/*' },
     ],
   },
-  plugins: [
-    tsconfigPaths(),
-    react(),
-  ],
+  plugins: [tsconfigPaths(), react()],
 });

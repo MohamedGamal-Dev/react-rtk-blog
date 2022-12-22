@@ -1,8 +1,10 @@
 import { useEffect } from 'react';
+import { Route, Routes } from 'react-router-dom';
 
 import { useDispatch } from '@utils/use-typed-rtk-store';
-import { PostsList, fetchPosts } from '@/features/posts';
+import { PostsList, PostAdd, fetchPosts } from '@/features/posts';
 import { fetchUsers } from '@/features/users';
+import { HOME_PAGE, POST } from './routes';
 
 const App = () => {
   const dispatch = useDispatch();
@@ -13,8 +15,14 @@ const App = () => {
   }, []);
 
   return (
-    //
-    <PostsList />
+    <Routes>
+      <Route>
+        <Route path={HOME_PAGE} element={<PostsList />} />
+        <Route path={POST}>
+          <Route index element={<PostAdd />} />
+        </Route>
+      </Route>
+    </Routes>
   );
 };
 
