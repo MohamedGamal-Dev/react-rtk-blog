@@ -11,7 +11,8 @@ export default defineConfig({
   resolve: {
     alias: [
       // { find: '@/*', replacement: '/src/*' },
-      { find: '@utils/*', replacement: 'src/features/utils/*' },
+      { find: '@utils/* ', replacement: 'src/features/utils/*' },
+      { find: '@ui/* ', replacement: 'src/features/ui/*' },
     ],
   },
   plugins: [tsconfigPaths(), react()],
