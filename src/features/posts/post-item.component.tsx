@@ -11,7 +11,7 @@ const PostItem: React.FunctionComponent<PostProps> = ({ post }) => {
   const dispatch = useDispatch();
 
   const handleClick = () => {
-    console.log(dispatch(deletePost(post)));
+    dispatch(deletePost(post));
   };
 
   return (
@@ -21,6 +21,9 @@ const PostItem: React.FunctionComponent<PostProps> = ({ post }) => {
         {body.substring(0, 100)} {`...`}
       </p>
       <br />
+      <Button primary>
+        <FaEdit />
+      </Button>
       <Button danger onClick={handleClick}>
         <FaTrashAlt />
       </Button>

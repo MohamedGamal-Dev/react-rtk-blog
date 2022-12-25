@@ -1,23 +1,22 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 
-import { useDispatch, useSelector } from '@/app/use-typed-rtk-store';
+import { useDispatch } from '@/app/use-typed-rtk-store';
 import { addPost } from '@/features/posts';
+import { useStoreState } from '@/app/use-store-state';
 
 const PostAdd: React.FunctionComponent = () => {
   const dispatch = useDispatch();
   const navigate = useNavigate();
 
-  const users = useSelector((state) => state.users.data);
+  const { users } = useStoreState();
 
   const initialState = {
     userId: '',
     title: '',
     body: '',
   };
-
   const [elementState, setElementState] = useState(initialState);
-
   const { userId, title, body } = elementState;
 
   const handleFormSubmit = (event: React.FormEvent<HTMLFormElement>) => {
