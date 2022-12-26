@@ -1,5 +1,6 @@
 import { createSlice } from '@reduxjs/toolkit';
-import { addPost, deletePost, fetchPosts } from '@/features/posts';
+
+import { addPost, deletePost, editPost, fetchPosts } from '@/features/posts';
 import { PostsState } from '@/types/posts';
 
 const initialState: PostsState = { data: [], isLoading: false, error: null };
@@ -45,6 +46,21 @@ const postsSlice = createSlice({
         state.data = state.data.filter((post) => post.id !== action.payload.id);
       })
       .addCase(deletePost.rejected, (state, action) => {
+        state.isLoading = false;
+        state.error = action.error.message!;
+      });
+
+    builder
+      .addCase(editPost.pending, (state) => {
+        state.isLoading = true;
+      })
+      .addCase(editPost.fulfilled, (state, action) => {
+        state.isLoading = false;
+        state.data = state.data.map((post) => {
+          return post.id === action.payload.id ? action.payload : post;
+        });
+      })
+      .addCase(editPost.rejected, (state, action) => {
         state.isLoading = false;
         state.error = action.error.message!;
       });
