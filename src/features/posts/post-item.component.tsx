@@ -1,17 +1,22 @@
-import React from 'react';
+import { useNavigate } from 'react-router-dom';
 import { FaTrashAlt, FaEdit } from 'react-icons/fa';
 
 import { useDispatch } from '@/app/use-typed-rtk-store';
 import { PostProps } from '@/types/posts';
 import { Button } from '@ui/forms';
 import { deletePost } from '@/features/posts';
+import { postEditDynamicRoute } from '@/routes';
 
-const PostItem: React.FunctionComponent<PostProps> = ({ post }) => {
-  const { title, body } = post;
+const PostItem = ({ post }: PostProps) => {
+  const { id, title, body } = post;
   const dispatch = useDispatch();
+  const navigate = useNavigate();
 
-  const handleClick = () => {
+  const handleDeleteClick = () => {
     dispatch(deletePost(post));
+  };
+  const handleEditClick = () => {
+    navigate(postEditDynamicRoute(id));
   };
 
   return (
@@ -21,10 +26,10 @@ const PostItem: React.FunctionComponent<PostProps> = ({ post }) => {
         {body.substring(0, 100)} {`...`}
       </p>
       <br />
-      <Button primary>
+      <Button primary onClick={handleEditClick}>
         <FaEdit />
       </Button>
-      <Button danger onClick={handleClick}>
+      <Button danger onClick={handleDeleteClick}>
         <FaTrashAlt />
       </Button>
     </>
