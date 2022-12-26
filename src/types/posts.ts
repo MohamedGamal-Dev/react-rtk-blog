@@ -21,3 +21,9 @@ export interface PostPrepare {
   title: string;
   body: string;
 }
+
+export interface PostEditPrepare {
+  post: PostType;
+  titleUpdate: string;
+  bodyUpdate: string;
+}
