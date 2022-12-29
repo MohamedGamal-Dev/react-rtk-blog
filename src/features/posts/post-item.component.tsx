@@ -1,11 +1,11 @@
-import { useNavigate } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { FaTrashAlt, FaEdit } from 'react-icons/fa';
 
 import { useDispatch } from '@/app/use-typed-rtk-store';
 import { PostProps } from '@/types/posts';
 import { Button } from '@ui/forms';
 import { deletePost } from '@/features/posts';
-import { postEditDynamicRoute } from '@/routes';
+import { postDynamicRoute, postEditDynamicRoute } from '@/routes';
 
 const PostItem = ({ post }: PostProps) => {
   const { id, title, body } = post;
@@ -21,7 +21,10 @@ const PostItem = ({ post }: PostProps) => {
 
   return (
     <>
-      <h2>{title}</h2>
+      <Link to={postDynamicRoute(id)}>
+        <h2>{title}</h2>
+      </Link>
+
       <p>
         {body.substring(0, 100)} {`...`}
       </p>

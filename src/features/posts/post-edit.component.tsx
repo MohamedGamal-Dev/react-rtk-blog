@@ -26,7 +26,7 @@ const PostEdit = () => {
     event.preventDefault();
 
     dispatch(editPost({ post, titleUpdate: title, bodyUpdate: body }));
-    navigate('/');
+    navigate(postDynamicRoute(post.id));
   };
 
   const handleOnChange = (
