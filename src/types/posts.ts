@@ -27,3 +27,8 @@ export interface PostEditPrepare {
   titleUpdate: string;
   bodyUpdate: string;
 }
+
+export interface PostDateProps {
+  timestamp: string;
+  children?: React.ReactNode;
+}
