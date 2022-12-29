@@ -5,7 +5,7 @@ import { useDispatch } from '@/app/use-typed-rtk-store';
 import { addPost } from '@/features/posts';
 import { useStoreState } from '@/app/use-store-state';
 
-const PostAdd: React.FunctionComponent = () => {
+const PostAdd = () => {
   const dispatch = useDispatch();
   const navigate = useNavigate();
 

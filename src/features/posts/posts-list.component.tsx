@@ -1,10 +1,10 @@
-import React, { Fragment } from 'react';
+import { Fragment } from 'react';
 
 import { useSelector } from '@/app/use-typed-rtk-store';
 import { PostType } from '@/types/posts';
 import { PostItem } from '@/features/posts';
 
-const PostsList: React.FunctionComponent = () => {
+const PostsList = () => {
   const { data, isLoading, error } = useSelector((state) => {
     return state.posts;
   });
