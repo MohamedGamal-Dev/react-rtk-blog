@@ -9,6 +9,10 @@ export interface PostType {
   id: string;
   title: string;
   body: string;
+  date: string;
+  reactions?: {
+    [reaction: string]: number;
+  };
 }
 
 export interface PostProps {
