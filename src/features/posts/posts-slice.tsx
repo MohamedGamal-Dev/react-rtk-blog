@@ -8,7 +8,22 @@ const initialState: PostsState = { data: [], isLoading: false, error: null };
 const postsSlice = createSlice({
   name: 'posts',
   initialState,
-  reducers: {},
+  reducers: {
+    reactionCount(state, action) {
+      state.data = state.data.map((post) => {
+        return post.id === action.payload.id
+          ? {
+              ...post,
+              reactions: {
+                ...post.reactions,
+                [action.payload.reaction]:
+                  post.reactions![action.payload.reaction] + 1,
+              },
+            }
+          : post;
+      });
+    },
+  },
   extraReducers(builder) {
     builder
       .addCase(fetchPosts.pending, (state, action) => {
@@ -68,3 +83,4 @@ const postsSlice = createSlice({
 });
 
 export const postsReducer = postsSlice.reducer;
+export const { reactionCount } = postsSlice.actions;
