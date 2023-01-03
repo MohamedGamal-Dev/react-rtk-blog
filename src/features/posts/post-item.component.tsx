@@ -4,11 +4,16 @@ import { FaTrashAlt, FaEdit } from 'react-icons/fa';
 import { useDispatch } from '@/app/use-typed-rtk-store';
 import { PostProps } from '@/types/posts';
 import { Button } from '@ui/forms';
-import { deletePost } from '@/features/posts';
+import {
+  deletePost,
+  PostAuthor,
+  PostDate,
+  PostReactions,
+} from '@/features/posts';
 import { postDynamicRoute, postEditDynamicRoute } from '@/routes';
 
 const PostItem = ({ post }: PostProps) => {
-  const { id, title, body } = post;
+  const { userId, id, title, body, date, reactions } = post;
   const dispatch = useDispatch();
   const navigate = useNavigate();
 
@@ -24,10 +29,8 @@ const PostItem = ({ post }: PostProps) => {
       <Link to={postDynamicRoute(id)}>
         <h2>{title}</h2>
       </Link>
-
-      <p>
-        {body.substring(0, 100)} {`...`}
-      </p>
+      <PostAuthor userId={userId} />
+      <PostDate timestamp={date} />
       <br />
       <Button primary onClick={handleEditClick}>
         <FaEdit />
@@ -35,6 +38,14 @@ const PostItem = ({ post }: PostProps) => {
       <Button danger onClick={handleDeleteClick}>
         <FaTrashAlt />
       </Button>
+      <p>
+        {body.substring(0, 100)} {`...`}
+      </p>
+
+      <PostReactions post={post!} />
+      <br />
+      <Link to={postDynamicRoute(id)}>Read More ⟶</Link>
+      <br />
     </>
   );
 };

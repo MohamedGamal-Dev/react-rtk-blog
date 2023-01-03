@@ -4,7 +4,7 @@ import { FaTrashAlt, FaEdit } from 'react-icons/fa';
 import { useDispatch } from '@/app/use-typed-rtk-store';
 import { useStoreState } from '@/app/use-store-state';
 import { HOME_PAGE, postEditDynamicRoute } from '@/routes';
-import { deletePost } from '@/features/posts';
+import { deletePost, PostReactions } from '@/features/posts';
 import { Button } from '@ui/forms';
 
 const PostPageRender = () => {
@@ -35,6 +35,8 @@ const PostPageRender = () => {
       </Button>
 
       <p>{body}</p>
+
+      <PostReactions post={post!} />
     </>
   );
 };
