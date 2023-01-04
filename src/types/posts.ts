@@ -20,6 +20,10 @@ export interface PostProps {
   children?: React.ReactNode;
 }
 
+export interface PostDateProps {
+  timestamp: string;
+  children?: React.ReactNode;
+}
 export interface PostPrepare {
   userId: string;
   title: string;
@@ -32,7 +36,7 @@ export interface PostEditPrepare {
   bodyUpdate: string;
 }
 
-export interface PostDateProps {
-  timestamp: string;
-  children?: React.ReactNode;
+export interface PostReactionsPrepare {
+  post: PostType;
+  reaction: string;
 }

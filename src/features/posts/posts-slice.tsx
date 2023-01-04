@@ -1,6 +1,12 @@
 import { createSlice } from '@reduxjs/toolkit';
 
-import { addPost, deletePost, editPost, fetchPosts } from '@/features/posts';
+import {
+  addPost,
+  deletePost,
+  editPost,
+  fetchPosts,
+  reactionsCount,
+} from '@/features/posts';
 import { PostsState } from '@/types/posts';
 
 const initialState: PostsState = { data: [], isLoading: false, error: null };
@@ -8,22 +14,7 @@ const initialState: PostsState = { data: [], isLoading: false, error: null };
 const postsSlice = createSlice({
   name: 'posts',
   initialState,
-  reducers: {
-    reactionCount(state, action) {
-      state.data = state.data.map((post) => {
-        return post.id === action.payload.id
-          ? {
-              ...post,
-              reactions: {
-                ...post.reactions,
-                [action.payload.reaction]:
-                  post.reactions![action.payload.reaction] + 1,
-              },
-            }
-          : post;
-      });
-    },
-  },
+  reducers: {},
   extraReducers(builder) {
     builder
       .addCase(fetchPosts.pending, (state, action) => {
@@ -79,8 +70,23 @@ const postsSlice = createSlice({
         state.isLoading = false;
         state.error = action.error.message!;
       });
+
+    builder
+      .addCase(reactionsCount.pending, (state) => {
+        state.isLoading = false;
+      })
+      .addCase(reactionsCount.fulfilled, (state, action) => {
+        state.isLoading = false;
+        state.data = state.data.map((post) => {
+          return post.id === action.payload.id ? action.payload : post;
+        });
+      })
+      .addCase(reactionsCount.rejected, (state, action) => {
+        state.isLoading = false;
+        state.error = action.error.message!;
+      });
   },
 });
 
 export const postsReducer = postsSlice.reducer;
-export const { reactionCount } = postsSlice.actions;
+// export const { reactionCount } = postsSlice.actions;

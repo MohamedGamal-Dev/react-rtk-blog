@@ -1,14 +1,13 @@
-
 import { FaThumbsUp, FaThumbsDown } from 'react-icons/fa';
 
 import { PostProps } from '@/types/posts';
 import { useDispatch } from '@/app/use-typed-rtk-store';
 import { Button } from '@ui/forms';
-import { reactionCount } from '@/features/posts';
+import { reactionsCount } from '@/features/posts';
 
 const PostReactions = ({ post }: PostProps) => {
   const dispatch = useDispatch();
-  const { id, reactions } = post!;
+  const { reactions } = post!;
 
   let reactionsIcons = {
     thumbsUp: <FaThumbsUp />,
@@ -21,7 +20,7 @@ const PostReactions = ({ post }: PostProps) => {
         <button
           key={reaction}
           onClick={() => {
-            dispatch(reactionCount({ id, reaction }));
+            dispatch(reactionsCount({ post, reaction }));
           }}
         >
           {icon}
