@@ -9,6 +9,10 @@
       "reactions": {
         "thumbsUp": 0,
         "thumbsDown": 0
+      },
+      "image": {
+        "src": "https://images.unsplash.com/photo-1510442650500-93217e634e4c?crop=entropy&cs=tinysrgb&fit=crop&fm=jpg&h=1080&ixid=MnwxfDB8MXxyYW5kb218MHx8YmxvZ3x8fHx8fDE2NzI4MjIyODQ&ixlib=rb-4.0.3&q=80&utm_campaign=api-credit&utm_medium=referral&utm_source=unsplash_source&w=1920",
+        "alt": "Image of blog"
       }
     },
     {
@@ -20,6 +24,10 @@
       "reactions": {
         "thumbsUp": 0,
         "thumbsDown": 0
+      },
+      "image": {
+        "src": "https://images.unsplash.com/photo-1510442650500-93217e634e4c?crop=entropy&cs=tinysrgb&fit=crop&fm=jpg&h=1080&ixid=MnwxfDB8MXxyYW5kb218MHx8YmxvZ3x8fHx8fDE2NzI4MjIyODQ&ixlib=rb-4.0.3&q=80&utm_campaign=api-credit&utm_medium=referral&utm_source=unsplash_source&w=1920",
+        "alt": "Image of blog"
       }
     },
     {
@@ -31,6 +39,10 @@
       "reactions": {
         "thumbsUp": 0,
         "thumbsDown": 0
+      },
+      "image": {
+        "src": "https://images.unsplash.com/photo-1510442650500-93217e634e4c?crop=entropy&cs=tinysrgb&fit=crop&fm=jpg&h=1080&ixid=MnwxfDB8MXxyYW5kb218MHx8YmxvZ3x8fHx8fDE2NzI4MjIyODQ&ixlib=rb-4.0.3&q=80&utm_campaign=api-credit&utm_medium=referral&utm_source=unsplash_source&w=1920",
+        "alt": "Image of blog"
       }
     },
     {
@@ -42,6 +54,10 @@
       "reactions": {
         "thumbsUp": 0,
         "thumbsDown": 0
+      },
+      "image": {
+        "src": "https://images.unsplash.com/photo-1510442650500-93217e634e4c?crop=entropy&cs=tinysrgb&fit=crop&fm=jpg&h=1080&ixid=MnwxfDB8MXxyYW5kb218MHx8YmxvZ3x8fHx8fDE2NzI4MjIyODQ&ixlib=rb-4.0.3&q=80&utm_campaign=api-credit&utm_medium=referral&utm_source=unsplash_source&w=1920",
+        "alt": "Image of blog"
       }
     }
   ],

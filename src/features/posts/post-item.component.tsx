@@ -13,7 +13,7 @@ import {
 import { postDynamicRoute, postEditDynamicRoute } from '@/routes';
 
 const PostItem = ({ post }: PostProps) => {
-  const { userId, id, title, body, date, reactions } = post;
+  const { userId, id, title, body, date, image } = post;
   const dispatch = useDispatch();
   const navigate = useNavigate();
 
@@ -24,8 +24,11 @@ const PostItem = ({ post }: PostProps) => {
     navigate(postEditDynamicRoute(id));
   };
 
+  let randomImage = image ? <img src={image!.src} alt={image!.alt} /> : null;
+
   return (
     <>
+      {randomImage}
       <Link to={postDynamicRoute(id)}>
         <h2>{title}</h2>
       </Link>

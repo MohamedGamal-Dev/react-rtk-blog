@@ -13,6 +13,7 @@ export interface PostType {
   reactions?: {
     [reaction: string]: number;
   };
+  image?: { src: string; alt?: string };
 }
 
 export interface PostProps {
