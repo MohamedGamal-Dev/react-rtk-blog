@@ -9,6 +9,7 @@ export interface ButtonProps
   success?: boolean;
   warning?: boolean;
   danger?: boolean;
+  info?: boolean;
   rounded?: boolean;
   outline?: boolean;
   isLoading?: boolean;
@@ -21,6 +22,7 @@ export const Button = ({
   success,
   warning,
   danger,
+  info,
   rounded,
   outline,
   isLoading,
@@ -30,18 +32,20 @@ export const Button = ({
   const classVariation = classNames(
     'flex items-center px-3 py-1.5 border h-8',
     {
-      'border-blue-500 bg-blue-500 text-white': primary,
-      'border-gray-900 bg-gray-900 text-white': secondary,
-      'border-green-500 bg-green-500 text-white': success,
-      'border-yellow-400 bg-yellow-400 text-white': warning,
-      'border-red-500 bg-red-500 text-white': danger,
+      'border-primary-main bg-primary-main text-white': primary,
+      'border-secondary-main bg-secondary-main text-white': secondary,
+      'border-success-main bg-success-main text-white': success,
+      'border-warning-main bg-warning-main text-white': warning,
+      'border-danger-main bg-danger-main text-white': danger,
+      'border-info-main bg-info-main text-white': info,
       'rounded-full': rounded,
       'bg-transparent': outline,
-      'text-blue-500': outline && primary,
-      'text-gray-900': outline && secondary,
-      'text-green-500': outline && success,
-      'text-yellow-400': outline && warning,
-      'text-red-500': outline && danger,
+      'text-primary-main': outline && primary,
+      'text-secondary-main': outline && secondary,
+      'text-success-main': outline && success,
+      'text-warning-main': outline && warning,
+      'text-danger-main': outline && danger,
+      'text-info-main': outline && info,
       'opacity-80': isLoading,
     },
     rest.className
