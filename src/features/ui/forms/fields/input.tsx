@@ -1,12 +1,7 @@
 import classNames from 'classnames';
-import { FiledProps } from '@ui/forms/filed';
+import { FiledProps } from '@/features/ui/forms/fields';
 
-export const TextareaFiled = ({
-  variant,
-  rounded,
-  outline,
-  ...rest
-}: FiledProps) => {
+export const Input = ({ variant, rounded, outline, ...rest }: FiledProps) => {
   const primary = variant === 'primary';
   const secondary = variant === 'secondary';
   const success = variant === 'success';
@@ -37,7 +32,7 @@ export const TextareaFiled = ({
   );
   return (
     <>
-      <textarea className={classVariation} {...rest}></textarea>
+      <input className={classVariation} {...rest} />
     </>
   );
 };
