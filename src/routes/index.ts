@@ -11,3 +11,26 @@ export const postDynamicRoute = (id: string = ':postId') => {
 export const postEditDynamicRoute = (id: string = ':postId') => {
   return `/post/${id}/edit`;
 };
+
+export const navPages = [
+  {
+    title: 'Home',
+    to: '/',
+  },
+  {
+    title: 'Blog',
+    to: '/',
+  },
+  {
+    title: 'Share',
+    to: '/post',
+  },
+  {
+    title: 'About',
+    to: '/about',
+  },
+  {
+    title: 'Contact US',
+    to: '/',
+  },
+];
