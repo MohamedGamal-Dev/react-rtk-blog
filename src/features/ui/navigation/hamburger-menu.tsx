@@ -6,6 +6,7 @@ export const HamMenuPanel = ({
   panelStyle,
   color = 'bg-transparent',
   rounded,
+  panelSize = true,
   children,
   ...rest
 }: any) => {
@@ -14,6 +15,7 @@ export const HamMenuPanel = ({
     {
       'cursor-pointer': pointer,
       'rounded-2xl ': rounded,
+      'h-10 w-10': panelSize,
     },
     color,
     panelStyle,
@@ -22,7 +24,7 @@ export const HamMenuPanel = ({
   return <>{panel ? <div className={panelClass}>{children}</div> : null}</>;
 };
 
-export const HamMenuLines = ({
+export const HamMenuIcon = ({
   outerWidth = 'w-7',
   innerWidth = 'w-5',
   innerColor = 'bg-orange-500',
@@ -60,21 +62,49 @@ export const HamMenuLines = ({
     ></span>
   );
   return (
-    <>
+    <div className="space-y-2">
       <span className={outClass}></span>
       <span className={innerClass}></span>
       {!twoLines && thirdLine}
-    </>
+    </div>
   );
 };
 
-export const HamMenu = ({ twoLines, ...rest }: any) => {
+export const HamMenu = ({
+  panel,
+  pointer,
+  panelStyle,
+  color,
+  rounded,
+  panelSize,
+
+  outerWidth,
+  innerWidth,
+  innerColor,
+  outerColor,
+  twoLines,
+  close,
+
+  ...rest
+}: any) => {
   return (
     <>
-      <HamMenuPanel>
-        <div className="space-y-2">
-          <HamMenuLines close twoLines />
-        </div>
+      <HamMenuPanel
+        panel={panel}
+        pointer={pointer}
+        panelStyle={panelStyle}
+        color={color}
+        rounded={rounded}
+        panelSize={panelSize}
+      >
+        <HamMenuIcon
+          outerWidth={outerWidth}
+          innerWidth={innerWidth}
+          innerColor={innerColor}
+          outerColor={outerColor}
+          twoLines={twoLines}
+          close={close}
+        />
       </HamMenuPanel>
     </>
   );
