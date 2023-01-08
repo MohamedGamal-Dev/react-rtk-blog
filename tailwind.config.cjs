@@ -2,14 +2,14 @@
 module.exports = {
   content: ['./index.html', './src/**/*.{js,ts,jsx,tsx}'],
   theme: {
-    // screens: {
-    //   sm: '480px',
-    //   md: '768px',
-    //   lg: '976px',
-    //   xl: '1280px',
-    //   '2xl': '1440px',
-    //   'sm-only': { min: '480px', max: '767px' },
-    // },
+    screens: {
+      sm: '480px',
+      md: '768px',
+      lg: '976px',
+      xl: '1280px',
+      '2xl': '1440px',
+      'sm-only': { min: '480px', max: '767px' },
+    },
     extend: {
       colors: {
         primary: {
@@ -51,6 +51,9 @@ module.exports = {
         // },
         // neutral: { main: '#', light: '#', dark: '#' },
         // base: { main: '#', light: '#', dark: '#' },
+      },
+      backgroundImage: {
+        'hero-wave': "url('/src/assets/images/hero-wave.svg')",
       },
     },
   },
