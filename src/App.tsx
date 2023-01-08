@@ -11,6 +11,7 @@ import {
 } from '@/features/posts';
 import { fetchUsers } from '@/features/users';
 import { HOME_PAGE, POST, POST_EDIT, POST_BY_ID } from '@/routes';
+import { Layout } from '@/pages/layout';
 
 const App = () => {
   const dispatch = useDispatch();
@@ -22,7 +23,7 @@ const App = () => {
 
   return (
     <Routes>
-      <Route>
+      <Route element={<Layout />}>
         <Route path={HOME_PAGE} element={<PostsList />} />
         <Route path={POST}>
           <Route index element={<PostAdd />} />
