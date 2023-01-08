@@ -14,52 +14,60 @@ export const HamMenuPanel = ({
     'group flex items-center justify-center p-2 ',
     {
       'cursor-pointer': pointer,
-      'rounded-2xl ': rounded,
-      'h-10 w-10': panelSize,
+      'rounded ': rounded,
+      'h-9 w-9': panelSize,
     },
     color,
     panelStyle,
     rest.className
   );
-  return <>{panel ? <div className={panelClass}>{children}</div> : null}</>;
+  return (
+    <>
+      {panel ? (
+        <button {...rest} className={panelClass}>
+          <span className="sr-only">Open main menu</span>
+          {children}
+        </button>
+      ) : null}
+    </>
+  );
 };
 
 export const HamMenuIcon = ({
   outerWidth = 'w-7',
   innerWidth = 'w-5',
-  innerColor = 'bg-orange-500',
-  outerColor = 'bg-slate-500 ',
+  innerColor = 'bg-primary-main group-hover:bg-secondary-main',
+  outerColor = 'bg-light-secondary group-hover:bg-light-off',
   twoLines,
   close,
   ...rest
 }: any) => {
   const outClass = classNames(
-    'block h-1 origin-center rounded-full',
+    'block h-1 origin-center rounded-full  transition-transform ease-in-out ',
     {
-      ' transition-transform ease-in-out group-hover:translate-y-1.5 group-hover:rotate-45 ':
-        close,
+      'translate-y-1.5 rotate-45 ': close,
     },
     outerWidth,
     outerColor
   );
 
-  const inHover = outerWidth && close ? `group-hover:${outerWidth}` : null;
+  const inHover =
+    outerWidth && close
+      ? `${outerWidth} transition-transform ease-in-out -translate-y-1.5  -rotate-45`
+      : null;
 
   const innerClass = classNames(
-    'block h-1 origin-center rounded-full',
+    'block h-1 origin-center rounded-full  transition-transform ease-in-out',
     {
-      'transition-transform ease-in-out group-hover:-translate-y-1.5 group-hover:-rotate-45':
-        close,
+      '-translate-y-1.5  -rotate-45': close,
     },
-    innerWidth,
+    outerWidth && close ? outerWidth : innerWidth,
     inHover,
     innerColor
   );
 
   const thirdLine = (
-    <span
-      className={`${outClass} ${close ? 'group-hover:hidden' : null}`}
-    ></span>
+    <span className={`${outClass} ${close ? 'hidden' : null}`}></span>
   );
   return (
     <div className="space-y-2">

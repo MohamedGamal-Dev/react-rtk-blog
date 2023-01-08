@@ -13,11 +13,19 @@ export const Input = ({ variant, rounded, outline, ...rest }: FiledProps) => {
     'w-full border-2 p-2.5 text-lg outline-none',
     {
       'border-primary-main bg-primary-main text-white': primary,
-      'border-secondary-main bg-secondary-main text-white': secondary,
-      'border-success-main bg-success-main text-white': success,
-      'border-warning-main bg-warning-main text-white': warning,
-      'border-danger-main bg-danger-main text-white': danger,
-      'border-info-main bg-info-main text-white': info,
+      'border-secondary-main  text-white': secondary,
+      'border-success-main  text-white': success,
+      'border-warning-main  text-white': warning,
+      'border-danger-main  text-white': danger,
+      'border-info-main text-white': info,
+
+      'bg-primary-main': !outline && primary,
+      'bg-secondary-main': !outline && secondary,
+      'bg-success-main': !outline && success,
+      'bg-warning-main': !outline && warning,
+      'bg-danger-main': !outline && danger,
+      'bg-info-main': !outline && info,
+
       'rounded-full': rounded,
       'bg-transparent': outline,
       'text-primary-main': outline && primary,
@@ -32,7 +40,7 @@ export const Input = ({ variant, rounded, outline, ...rest }: FiledProps) => {
   );
   return (
     <>
-      <input className={classVariation} {...rest} />
+      <input {...rest} className={classVariation} />
     </>
   );
 };
