@@ -19,7 +19,7 @@ export const navPages = [
   },
   {
     title: 'Blog',
-    to: '/',
+    to: '/home',
   },
   {
     title: 'Share',
@@ -31,6 +31,6 @@ export const navPages = [
   },
   {
     title: 'Contact US',
-    to: '/',
+    to: '/404',
   },
 ];
