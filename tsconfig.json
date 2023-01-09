@@ -19,7 +19,8 @@
     "paths": {
       "@/*": ["src/*"],
       "@utils/*": ["src/features/utils/*"],
-      "@ui/*": ["src/features/ui/*"]
+      "@ui/*": ["src/features/ui/*"],
+      "@layout/*": ["src/pages/layout/*"]
       // "@app/*": ["src/app/*"],
       // "@features/*": ["src/features/*"],
       // "@routes/*": ["src/routes/*"],

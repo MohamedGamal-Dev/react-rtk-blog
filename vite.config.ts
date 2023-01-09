@@ -13,6 +13,7 @@ export default defineConfig({
       // { find: '@/*', replacement: '/src/*' },
       { find: '@utils/* ', replacement: 'src/features/utils/*' },
       { find: '@ui/* ', replacement: 'src/features/ui/*' },
+      { find: '@layout/* ', replacement: 'src/pages/layout/*' },
     ],
   },
   plugins: [tsconfigPaths(), react()],
