@@ -5,6 +5,7 @@ import { useDispatch } from '@/app/use-typed-rtk-store';
 import { editPost } from '@/features/posts';
 import { useStoreState } from '@/app/use-store-state';
 import { postDynamicRoute } from '@/routes';
+import { Input, TextareaFiled } from '@/features/ui';
 
 const PostEdit = () => {
   const dispatch = useDispatch();
@@ -45,32 +46,36 @@ const PostEdit = () => {
 
   return (
     <>
-      <div>
+      <div className=" bg-dark-off border border-dark-primary rounded-lg shadow-md p-4">
         <div>
-          <form
-            onSubmit={handleFormSubmit}
-            className="flex flex-col space-y-4 bg-slate-400"
-          >
-            <input
+          <form onSubmit={handleFormSubmit} className="flex flex-col space-y-4">
+            <Input
               name="title"
               value={title}
               onChange={handleOnChange}
               placeholder="Please Enter Post Title"
               required
+              className="block w-full rounded-lg border-2 border-primary-main bg-transparent p-2.5 text-lg text-light-primary shadow-sm shadow-primary-main outline-none focus:border-secondary-main focus:shadow-secondary-main"
             />
 
-            <textarea
+            <TextareaFiled
               name="body"
               value={body}
               onChange={handleOnChange}
               rows={4}
               placeholder="Please Enter Post Content"
               required
-            ></textarea>
+              className="block w-full rounded-lg border-2 border-primary-main bg-transparent p-2.5 text-lg text-light-primary shadow-sm shadow-primary-main outline-none focus:border-secondary-main focus:shadow-secondary-main"
+            ></TextareaFiled>
 
-            <p>Author:{postAuthor.name}</p>
+            <div className="font-serif text-sm font-medium text-secondary-dark">
+              <span className="text-base  text-light-secondary">{`Author: `}</span>
+              <span>{postAuthor.name}</span>
+            </div>
 
-            <button>Submit</button>
+            <button className="rounded-lg bg-primary-main px-5 py-2.5 text-center text-lg font-bold text-white shadow-sm shadow-dark-secondary hover:bg-secondary-dark hover:shadow-warning-light focus:outline-none">
+              SAVE
+            </button>
           </form>
         </div>
       </div>
