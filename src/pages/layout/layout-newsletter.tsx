@@ -25,10 +25,11 @@ export const LayoutNewsletter = () => {
 
   return (
     <>
-      <div className="flex bg-dark-off p-5 shadow-sm shadow-mgLight-secondary">
-        {/* { Container } */}
-        <Container className="flex flex-col items-center px-6 md:flex-row md:space-y-0 md:space-x-2 sm-only:space-y-4">
-          {/* { CTA } */}
+      <div className="flex bg-dark-off p-5">
+        <Container
+          center
+          className="flex flex-col items-center px-6 md:flex-row md:space-y-0 md:space-x-2 sm-only:space-y-4"
+        >
           <blockquote className="flex flex-col items-center md:w-1/2">
             <div className="text-3xl font-bold italic text-light-primary md:text-4xl">
               {newsLetterH1}
@@ -37,7 +38,7 @@ export const LayoutNewsletter = () => {
               {newsLetterH2}
             </div>
           </blockquote>
-          {/* { CTA- Form } */}
+
           <form onSubmit={handleFormSubmit} className="md:w-1/2">
             <div className="flex flex-col md:flex-row md:space-x-2 sm-only:space-y-2">
               <Input

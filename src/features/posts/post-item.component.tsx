@@ -29,7 +29,7 @@ const PostItem = ({ post }: PostProps) => {
   ) : null;
 
   return (
-    <div className="max-w-none lg:max-w-sm mr-2 mb-2 bg-dark-off border border-dark-primary rounded-lg shadow-md ">
+    <div className="max-w-none lg:max-w-sm mr-2 mb-2 bg-dark-off border border-dark-primary rounded-lg shadow-md flex flex-col justify-between">
       <Link to={postDynamicRoute(id)}>{randomImage}</Link>
 
       <div className="p-5">
